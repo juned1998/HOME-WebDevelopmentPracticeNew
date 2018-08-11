@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Internal &amp; External Javascript</title>
+        <!--Normalize-->
+        <link rel="stylesheet" type="text/css" href="normalize.css" >
+    </head>
+    
+    <body>
+        <div id="container">
+            <h1>Internal &amp; External JS</h1>
+            <p id="output"></p>
+        </div><!--#container-->
+        <!---Internal-->
+        <script type="text/javascript">
+            document.getElementById("output").innerHTML=" this text was created with internal javascript ";
+        </script>
+        <!---Externall-->
+        <script type="text/javascript" src="sc1ript.js" >
+        </script>
+    </body>
+</html>
