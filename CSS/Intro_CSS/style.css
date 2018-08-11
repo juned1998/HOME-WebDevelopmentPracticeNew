@@ -1,0 +1,106 @@
+/*this a comment*/
+body{
+    background-color: palevioletred;
+    color : ghostwhite;
+}
+
+body#idClassPage{
+ background-color: white;
+}
+
+h1{
+    font-size: 50px;
+    font-family: Helvetica,Aerial , sans-serif;
+}
+
+h2{
+    font-size: 30px;
+    font-family: Georgia,Times,serif;
+}
+
+p{
+    font-size:18px;
+    font-style: italic
+}
+
+ol{
+    margin: 20px;
+    padding:20;
+    color: white;
+}
+/* styles for ID class lectures*/
+
+#main-title{
+    color: cornsilk;
+    background-color: dimgrey;
+    font-size: 30px;
+    margin:20px;
+    padding:10px;
+}
+.section-header{
+    color: olive;
+    border: solid 1px pink;
+    text-align: center;
+    font-size: 1.2em;
+    padding:40px 20px 10px;
+    font-weight: normal;
+    
+}
+
+/* styles for descendant selector lecture */
+
+.primary-box{
+   
+    background-color: green;
+    border: solid 10px gray ;
+    padding: 20px;
+}
+
+.primary-box h2 {
+    font-family: sans-serif
+}
+
+
+
+.secondary-box{
+    
+    background-color:blue;
+    border: solid 10px gray;
+    padding: 10px;
+}
+
+.secondary-box p{
+    font-size:14px;
+    font-style:normal;
+}
+.secondary-box p em{
+    color:#fc3fc3;
+    
+}
+
+.secondary-box  em#emm{
+    color:#fc3fc3;
+}
+/*-------------------------------------------*/
+/*Styles for the grouping selector*/
+
+#main-container{
+    width:960px;
+    margin: 0 auto;
+}
+
+.primary-box, .secondary-box{
+    margin: 30px 20px;   
+}
+
+.inside-box
+{
+    border:10px solid black;
+}
+
+
+h1,h2,h3,h4,h5,h6{
+    text-align: center;
+    border-bottom: solid 3px white;
+    padding: 0 0 10px;
+}
