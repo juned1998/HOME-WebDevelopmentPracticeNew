@@ -1,0 +1,281 @@
+#box{
+    background: red;
+    height: 200px;
+    width:200px;
+    margin:40px auto;
+    padding:50px;
+    box-sizing: border-box;/*keeps padding constaint in height width */
+    border-radius: 20px;
+    /*border-bottom-left-radius: 100px;
+    border-top-right-radius: 100px;
+    /*-webkit-border-radius:100px*/
+}
+/* Colors */
+body#colors{
+    background: rgba(25,52,84,1);
+    color:white;
+}
+
+#colors #container{
+    width:600px;
+    margin:0 auto;
+    background:rgba(255,255,255,0.3);
+    padding:40px;
+  /*  background:hsla(120,100%,50%,0.3);*/
+}
+
+#colors #box{
+   /* background: linear-gradient(orange,white,green);*/
+  /*  background:linear-gradient(to left,orange,white,green);*/
+/* background:linear-gradient(to bottom left,orange,white,green);
+
+    background:linear-gradient(90deg,orange,white,green);*/
+background:radial-gradient(blue,yellow,white,gray,green,black,red,dodgerblue,pink);    
+}
+
+
+/*Shadows */
+#shadows #container{
+    width:600px;
+    margin:40px auto;
+    padding:20px;
+    box-sizing:border-box;
+    background: #fc3;
+    box-shadow: 0px 20px 10px -15px/*spread*/ #333/*color*/;
+}
+
+
+#shadows h1{
+    color: white;
+    text-shadow:/* hroizontal*/-1px /*vertical*/2px  blue,2px 1px /*blur*/4px red;
+}
+
+/*Columns*/
+#three-columns{
+    -webkit-column-count:3;
+    -moz-column-count:3;
+    /*column-count: 3;*/
+    
+    column-gap: 50px;
+    column-rule-style: solid ;
+    column-rule-width: 1px;
+    column-rule-color: #ddd;
+}
+
+/*Animations & transition*/
+
+/*@keyframes box{
+    from{background-color: red ;}
+    to{background-color: blue;}
+}*/
+
+@keyframes box{
+    from{border-radius: 40px ;
+        background-color: red ;
+        top:0;
+        left:0;
+        }
+    
+    to{border-radius: 100px;
+        background-color: blue;
+        top:100px;
+        left:100px;}
+}
+
+#animations #box{
+    position:relative;
+   animation-name:box;
+    animation-duration: 1s;
+    animation-timing-function:linear;
+  animation-delay: 2s;
+    animation-iteration-count: 3;
+    animation-direction:alternate;
+  /*shortcut  
+    animation:box 3s linear 2s 3 alternate; */
+}
+
+#box2{
+    background: blue;
+    width:200px;
+    height:200px;
+    color:white;
+}
+
+#box2:hover{
+    background: red;
+    width:210px;
+    height:210px;
+    top: -20px;
+    left:30px;
+    transition: all/*property ex.width*/ 10s;
+    transition-timing-function: ease-in;
+    /*Shot-hand
+        transition: all ease-in 4s;
+    */
+    transition: width 8s, height 2s ,background 5s;
+}
+
+/*Buttons*/
+@keyframes buttonAnimation{
+    from{padding:10px 20px;font-size: inherit;}
+    to{padding:15px 30px;font-size: 24px;}
+}
+.button{
+    display: inline-block;
+    background: #fc3;
+    background: linear-gradient(#fc3,#f91);
+    color:white;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border:solid 1px #999;
+    border-radius: 5px;
+    text-shadow:0 1px 2px rgba(0,0,0,0.6);
+}
+.button:hover{
+    border-color:#888;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.9);
+    background:#f91;
+    background: linear-gradient( to top,#fc3,#f91);
+    animation-name:buttonAnimation;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards ;
+}
+.button:active{
+    position:relative;
+    top:1px;
+}
+
+.alt-button{
+    background: radial-gradient(#fc3,#f91);
+}
+.alt-button:hover{
+    background: radial-gradient(#f91,#fc3);
+}
+
+/*Orbit Animation*/
+
+@keyframes starPulse{
+    from{opacity: 1;}
+    to{opacity: 0.2;}
+}
+
+@keyframes sunFire{
+    from{box-shadow:0 0 50px #f5c91a }
+    to{box-shadow:0 0 200px #f5c91a }
+}
+
+@keyframes spin{
+    from{transform : rotate(0);}
+    to{transform: rotate(360deg);}
+    
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#universe{
+    background: black;
+    background: -webkit-radial-gradient(#555,#000);
+     background: -moz-radial-gradient(#555,#000);
+     background: -o-radial-gradient(#555,#000);
+     background: radial-gradient(#555,#000);
+}
+
+#stars{
+    position: relative;
+    z-index: 2;
+    background: url(images/stars.png);
+    height: 100%;
+    width:100%;
+    animation: starPulse 4s infinite alternate;
+}
+#sun{
+    top:50%;
+    left:50%;
+    position: absolute;
+    border-radius: 100%;
+    z-index: 4;
+    height: 200px;
+    width:200px;
+    background: orange;
+    background:radial-gradient(#f5c313,#ec7e08);
+    margin-left: -100px;
+    margin-top:-100px;
+    box-shadow: 0 0 50px 10px #f5c91a;
+    animation: sunFire 2s
+infinite alternate;
+}
+
+#earthOrbit{
+    border:solid 1px none;
+    height: 700px;
+    width: 600px;
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left:50%;
+    margin-top:-300px;
+    margin-left: -300px;
+    border-radius: 100%;
+    animation: spin 30s linear infinite;
+}
+
+#earth{
+    position: absolute;
+    top:50%;
+    left:0;
+    margin-top: -40px;
+    animation: spin 3s linear infinite;
+}
+
+#moonOrbit{
+    border:solid 1px none;
+    height:120px;
+    width:120px;
+    position:absolute;
+    z-index:4;
+    top:50%;
+    left: -20px;
+    margin-top:-60px;
+    border-radius: 100%;
+    animation: spin 3s linear infinite reverse;
+}
+#moon{
+    height: 20px;
+    width: 20px;
+    background: gray;
+    background: radial-gradient(#ddd,#888);
+    border-radius: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
