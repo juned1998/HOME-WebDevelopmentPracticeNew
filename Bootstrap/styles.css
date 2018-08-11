@@ -1,0 +1,19 @@
+body{
+    padding-top: 60px;
+}
+
+.highlight{
+    background-color: pink;
+    border: solid 1px #555;
+}
+
+.small-box{
+    width:300px;
+}
+
+#scrollerBox{
+    border: solid 1px white;
+    position: relative;
+    height: 400px;
+    overflow: auto;
+}
